@@ -54,7 +54,7 @@ class List extends Component {
                 <div>
                   {this.state.juz.map((e, i) => {
                     return (
-                      <div className=" flex gap-x-2 mb-2 border-b pb-1" key={i}>
+                      <Link to={`/juz/${e.juz}`} className=" flex gap-x-2 mb-2 border-b pb-1" key={i}>
                         <p className="text-sm">{i + 1}.</p>
                         <div>
                           <p className="font-bold">Juz {e.juz}</p>
@@ -62,7 +62,7 @@ class List extends Component {
                           <p className="text-xs-gray">Sampai di : {e.juzEndInfo}</p>
 
                         </div>
-                      </div>
+                      </Link>
                     )
                   })}
                 </div>
