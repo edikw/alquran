@@ -9,29 +9,27 @@ class Menu extends Component {
     this.state = { counter: 0 }
   }
 
-
+  // componentDidMount() {
+  //   console.log(window.location.pathname, '??')
+  // }
 
   render() {
     return (
       <div>
         <div className="fixed bottom-0 z-40 w-full md:w-[640px]">
-          <div className="bg-white h-18 py-2 box" style={{
+          <div className="bg-white h-18 py-4 box" style={{
             border: '0.5px solid #f0f3f4',
             boxShadow: '0 -5px 5px -5px #dde1e6'
           }}>
             <div className="grid grid-cols-3 items-center">
               <Link to="/" className="text-center focus:outline-none">
-                <FontAwesomeIcon icon={['fas', 'house']} className="text-[#cb70f4]" />
+                <FontAwesomeIcon icon={['fas', 'house']} className="text-primary-blue" />
               </Link>
               <Link to="/" className="text-center focus:outline-none">
-                <div>
-                  <button className='rounded-2xl px-6 py-3 shadow text-2xl'>
-                    <FontAwesomeIcon icon={['fas', 'book-open']} className="text-[#cb70f4]" />
-                  </button>
-                </div>
+                <FontAwesomeIcon icon={['fas', 'book-open']} className="text-primary-blue" />
               </Link>
-              <Link to="/" className="text-center focus:outline-none">
-                <FontAwesomeIcon icon={['fas', 'house']} className="text-[#cb70f4]" />
+              <Link to="/jadwal-sholat" className="text-center focus:outline-none">
+                <FontAwesomeIcon icon={['fas', 'mosque']} className="text-primary-blue" />
               </Link>
             </div >
           </div >

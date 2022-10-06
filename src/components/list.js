@@ -28,7 +28,7 @@ class List extends Component {
               <div>
                 {this.state.surah.map((e, i) => {
                   return (
-                    <Link to={`/ayat/${e.number}`} className="flex justify-between mb-2 border-b pb-1 items-center" key={i}>
+                    <Link to={`/ayat/${e.number}`} className="flex justify-between mb-2 pb-1 items-center" key={i}>
                       <div className="flex gap-x-2">
                         <div>
                           <p className="text-sm">{i + 1}.</p>
@@ -37,8 +37,8 @@ class List extends Component {
                           <p className="font-bold">
                             {e.name.transliteration.id}
                           </p>
-                          <p className="text-xs-gray mb-1">{e.name.translation.id}</p>
-                          <p className="text-xs-gray">{e.revelation.id}</p>
+                          <p className="text-sm mb-1">{e.name.translation.id}</p>
+                          <p className="text-sm font-thin">{e.revelation.id}</p>
                         </div>
                       </div>
                       <p className="text-xl">
@@ -54,12 +54,12 @@ class List extends Component {
                 <div>
                   {this.state.juz.map((e, i) => {
                     return (
-                      <Link to={`/juz/${e.juz}`} className=" flex gap-x-2 mb-2 border-b pb-1" key={i}>
+                      <Link to={`/juz/${e.juz}`} className=" flex gap-x-2 mb-2 pb-1" key={i}>
                         <p className="text-sm">{i + 1}.</p>
                         <div>
                           <p className="font-bold">Juz {e.juz}</p>
-                          <p className="text-xs-gray">Mulai dari : {e.juzStartInfo}</p>
-                          <p className="text-xs-gray">Sampai di : {e.juzEndInfo}</p>
+                          <p className=" text-sm font-thin">Mulai dari : {e.juzStartInfo}</p>
+                          <p className="text-sm font-thin">Sampai di : {e.juzEndInfo}</p>
 
                         </div>
                       </Link>

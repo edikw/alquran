@@ -5,13 +5,18 @@ import axios from '../../axios'
 import List from '../../components/list';
 
 
+
 class Home extends Component {
   constructor() {
     super()
     this.state = {
       surah: [],
-      juz: []
+      juz: [],
+      address: '',
+      tmpSurah: []
     }
+
+    // this.handleSearch = this.handleSearch.bind(this)
   }
 
   componentDidMount() {
@@ -21,7 +26,18 @@ class Home extends Component {
   async getSurah() {
     const res = await axios.get('/surah')
     this.setState({ surah: res.data.data })
+    this.setState({ tmpSurah: res.data.data })
   }
+
+  // handleSearch(event) {
+  //   this.setState({ surah: this.state.tmpSurah })
+  //   if (event.target.value) {
+  //     const x = new RegExp(event.target.value, 'i')
+  //     const results = this.state.surah.filter((item) => x.test(item.name.transliteration.id))
+  //     this.setState({ surah: results })
+  //     console.log(this.state.surah)
+  //   }
+  // }
 
   async getJuz() {
     const tmp = []
@@ -58,7 +74,8 @@ class Home extends Component {
             }
           </div>
         </div>
-        {/* <Menu /> */}
+        <div className='h-20'></div>
+        <Menu />
       </div>
     )
   }
